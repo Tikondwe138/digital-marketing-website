@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechMark | Digital Marketing Agency</title>
+  <meta name="description" content="A futuristic digital marketing website for tech products and campaigns. Responsive, animated, and minimalist." />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">TechMark</div>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <div class="hero-content fade-in">
+      <h1>Transforming Clicks into Customers</h1>
+      <p>We craft data-driven digital strategies for tech brands that demand impact.</p>
+      <div class="cta">
+        <a href="#portfolio" class="btn">See Our Work</a>
+        <a href="#contact" class="btn-outline">Contact Us</a>
+      </div>
+    </div>
+    <div class="stats fade-in">
+      <div class="stat"><h2>120%</h2><p>Reach Increase</p></div>
+      <div class="stat"><h2>350K+</h2><p>Impressions</p></div>
+      <div class="stat"><h2>85%</h2><p>Engagement Rate</p></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section fade-in">
+    <h2>About Us</h2>
+    <p>TechMark is a forward-thinking agency helping tech companies dominate the digital space. Our mission: to turn innovation into influence through creative marketing execution.</p>
+    <div class="team">
+      <div class="member">
+        <img src="https://via.placeholder.com/150" alt="Jane Doe">
+        <h3>Jane Doe</h3>
+        <p>Founder & Strategist</p>
+      </div>
+      <div class="member">
+        <img src="https://via.placeholder.com/150" alt="John Smith">
+        <h3>John Smith</h3>
+        <p>Marketing Lead</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section fade-in">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service"><div class="icon">📱</div><h3>Social Media Marketing</h3><p>We build digital presence that converts scrolls into sales.</p></div>
+      <div class="service"><div class="icon">🔍</div><h3>SEO Optimization</h3><p>Rank higher and be seen by the right customers.</p></div>
+      <div class="service"><div class="icon">💰</div><h3>Paid Ads</h3><p>Maximize ROI through precision-targeted ad campaigns.</p></div>
+      <div class="service"><div class="icon">📧</div><h3>Email Marketing</h3><p>Personalized campaigns that drive long-term loyalty.</p></div>
+      <div class="service"><div class="icon">🖊️</div><h3>Tech Content Creation</h3><p>Engaging articles, visuals, and videos for your audience.</p></div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="section fade-in">
+    <h2>Portfolio</h2>
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="phones">Phones</button>
+      <button class="filter-btn" data-category="pcs">PCs</button>
+      <button class="filter-btn" data-category="accessories">Accessories</button>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item" data-category="phones"><img src="https://via.placeholder.com/300x200" alt="Phone"><h3>Galaxy Launch Ad</h3></div>
+      <div class="portfolio-item" data-category="pcs"><img src="https://via.placeholder.com/300x200" alt="PC"><h3>Gaming PC Campaign</h3></div>
+      <div class="portfolio-item" data-category="accessories"><img src="https://via.placeholder.com/300x200" alt="Accessory"><h3>Smartwatch Review</h3></div>
+      <div class="portfolio-item" data-category="phones"><img src="https://via.placeholder.com/300x200" alt="Phone"><h3>iPhone Teaser Series</h3></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="section fade-in">
+    <h2>What Clients Say</h2>
+    <div class="testimonial-container">
+      <div class="testimonial active">
+        <p>“TechMark helped us grow our social media presence by 200%. Their strategies deliver results.”</p><h4>- AlphaTech CEO</h4>
+      </div>
+      <div class="testimonial">
+        <p>“Professional, creative, and always on time. Our product launch exceeded all expectations.”</p><h4>- PC World Marketing Head</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section id="blog" class="section fade-in">
+    <h2>Insights</h2>
+    <div class="blog-grid">
+      <div class="blog-post"><h3>Top Smartphone Marketing Trends 2025</h3><p>Emerging trends that will reshape how brands market smartphones.</p></div>
+      <div class="blog-post"><h3>Why Performance Matters in Tech Ads</h3><p>Learn to optimize performance metrics for sustainable results.</p></div>
+      <div class="blog-post"><h3>Boost Engagement through Creativity</h3><p>Practical tips for building stronger online communities.</p></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section fade-in">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+    <div class="contact-info">
+      <p>Email: info@techmark.com | Phone: +123 456 7890</p>
+      <p><a href="#">Facebook</a> | <a href="#">LinkedIn</a> | <a href="#">Instagram</a></p>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER POPUP -->
+  <div id="newsletter" class="newsletter-modal hidden">
+    <div class="newsletter-content">
+      <h3>Join Our Newsletter</h3>
+      <p>Stay updated on the latest in tech marketing.</p>
+      <input type="email" placeholder="Your Email" />
+      <button id="subscribe-btn" class="btn">Subscribe</button>
+      <span id="close-newsletter" class="close">&times;</span>
+    </div>
+  </div>
+
+  <!-- FAKE LIVE CHAT -->
+  <div id="chat-widget" class="chat-widget">
+    <div class="chat-header">💬 Need Help?</div>
+    <div class="chat-body hidden">
+      <p>Hello! How can we assist you today?</p>
+      <input type="text" placeholder="Type a message..." />
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
