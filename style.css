@@ -22,6 +22,7 @@ body {
   font-family: "Poppins", "Montserrat", sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
+  position: relative;
 }
 
 /* ---------- 2. COLOR SYSTEM ---------- */
@@ -81,6 +82,7 @@ header {
   font-size: 1.6rem;
   font-weight: 700;
   background: var(--gradient);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -100,41 +102,60 @@ nav ul li a {
   transition: var(--transition);
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
   color: var(--accent);
 }
 
 /* ---------- Hamburger (Mobile) ---------- */
-.hamburger {
+#menu-toggle {
   display: none;
-  flex-direction: column;
   cursor: pointer;
+  font-size: 1.8rem;
+  color: var(--text-light);
 }
 
-.hamburger div {
-  height: 3px;
-  width: 25px;
-  background: var(--text-light);
-  margin: 4px 0;
-  transition: var(--transition);
+@media (max-width: 900px) {
+  nav ul {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    background: #111;
+    width: 250px;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding-top: 50px;
+    transition: var(--transition);
+  }
+
+  nav ul.show {
+    right: 0;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
 }
 
 /* ---------- 5. HERO SECTION ---------- */
 .hero {
   height: 100vh;
-  background: radial-gradient(circle at top left, #1c1c1e 0%, #0d0d0d 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   text-align: center;
   padding: 0 20px;
+  background: url('assets/images/hero-bg.jpg') center/cover no-repeat;
 }
 
 .hero h1 {
   font-size: 2.8rem;
   background: var(--gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
 }
@@ -161,6 +182,34 @@ nav ul li a:hover {
   color: #fff;
 }
 
+/* ABOUT SECTION TEAM */
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.member {
+  background: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  width: 220px;
+  transition: var(--transition);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.member img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+
 /* ---------- 6. SERVICES ---------- */
 .services-grid {
   display: grid;
@@ -169,7 +218,7 @@ nav ul li a:hover {
   margin-top: 3rem;
 }
 
-.service-card {
+.service {
   background: var(--bg-card);
   padding: 2rem;
   border-radius: 12px;
@@ -178,23 +227,20 @@ nav ul li a:hover {
   transition: var(--transition);
 }
 
-.service-card:hover {
+.service:hover {
   transform: translateY(-5px);
   border-color: var(--accent);
   box-shadow: 0 0 15px rgba(0, 255, 198, 0.3);
 }
 
-.service-card i {
-  font-size: 2rem;
-  color: var(--accent);
+.service .icon-svg {
+  width: 50px;
+  height: 50px;
   margin-bottom: 1rem;
+  filter: drop-shadow(0 0 5px var(--accent));
 }
 
-.service-card h3 {
-  margin-bottom: 0.5rem;
-}
-
-/* ---------- 7. PORTFOLIO / PRODUCTS ---------- */
+/* ---------- 7. PORTFOLIO ---------- */
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -207,6 +253,7 @@ nav ul li a:hover {
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
   transition: var(--transition);
 }
 
@@ -215,24 +262,43 @@ nav ul li a:hover {
   box-shadow: 0 0 20px rgba(122, 95, 255, 0.3);
 }
 
+.portfolio-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.portfolio-item:hover::after {
+  opacity: 1;
+}
+
 .portfolio-item img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
-.portfolio-item .info {
-  padding: 1rem;
-}
-
 /* ---------- 8. BLOG ---------- */
-.blog {
-  background: #111;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .blog-post {
-  margin-bottom: 2rem;
+  background: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: var(--transition);
+}
+
+.blog-post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(122, 95, 255, 0.3);
 }
 
 .blog-post h3 {
@@ -245,15 +311,15 @@ nav ul li a:hover {
 }
 
 /* ---------- 9. CONTACT ---------- */
-.contact-form {
+#contact-form {
   display: grid;
   gap: 1.5rem;
   max-width: 600px;
   margin: auto;
 }
 
-.contact-form input,
-.contact-form textarea {
+#contact-form input,
+#contact-form textarea {
   width: 100%;
   padding: 1rem;
   border-radius: 8px;
@@ -264,13 +330,13 @@ nav ul li a:hover {
   transition: var(--transition);
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
+#contact-form input:focus,
+#contact-form textarea:focus {
   border: 1px solid var(--accent);
   box-shadow: 0 0 5px rgba(0, 255, 198, 0.3);
 }
 
-.contact-form button {
+#contact-form button {
   background: var(--gradient);
   color: #000;
   border: none;
@@ -281,27 +347,27 @@ nav ul li a:hover {
   transition: var(--transition);
 }
 
-.contact-form button:hover {
+#contact-form button:hover {
   transform: scale(1.05);
   color: #fff;
 }
 
 /* ---------- 10. NEWSLETTER MODAL ---------- */
-#newsletter-modal {
+.newsletter-modal {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.85);
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
 
-#newsletter-modal.active {
+.newsletter-modal:not(.hidden) {
   display: flex;
 }
 
-.modal-content {
+.newsletter-content {
   background: var(--bg-card);
   padding: 2rem;
   border-radius: 12px;
@@ -310,31 +376,40 @@ nav ul li a:hover {
   max-width: 400px;
 }
 
-.modal-content h3 {
-  margin-bottom: 1rem;
-}
-
-.modal-content input {
+.newsletter-content input {
   width: 100%;
-  margin-bottom: 1rem;
-  padding: 10px;
+  padding: 12px;
   border-radius: 6px;
   border: none;
   outline: none;
+  margin-bottom: 1rem;
   background: #111;
   color: #fff;
 }
 
-.modal-content button {
+.newsletter-content button {
   background: var(--gradient);
   color: #000;
-  padding: 10px 20px;
-  border: none;
+  padding: 12px 25px;
   border-radius: 25px;
+  border: none;
   cursor: pointer;
 }
 
-/* ---------- 11. FLOATING CHAT WIDGET ---------- */
+.newsletter-content button:hover {
+  transform: scale(1.05);
+  color: #fff;
+}
+
+.newsletter-content .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ---------- 11. CHAT WIDGET ---------- */
 .chat-widget {
   position: fixed;
   bottom: 30px;
@@ -359,18 +434,45 @@ nav ul li a:hover {
   box-shadow: 0 0 25px rgba(122, 95, 255, 0.5);
 }
 
-/* ---------- 12. SCROLL FADE-IN ANIMATIONS ---------- */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeUp 1s ease forwards;
+.chat-body {
+  display: none;
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  width: 300px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 0 15px rgba(0, 255, 198, 0.3);
+  color: #fff;
 }
 
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.chat-body input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  margin-top: 0.5rem;
+  background: #111;
+  color: #fff;
+}
+
+/* ---------- 12. SCROLL FADE-IN ANIMATIONS ---------- */
+.section.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.section.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px var(--accent);
+  border-color: var(--accent);
 }
 
 /* ---------- 13. FOOTER ---------- */
@@ -385,40 +487,13 @@ footer {
 
 /* ---------- 14. RESPONSIVE DESIGN ---------- */
 @media (max-width: 900px) {
-  nav ul {
-    position: fixed;
-    top: 70px;
-    right: -100%;
-    background: #111;
-    width: 250px;
-    height: 100vh;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    padding-top: 50px;
-    transition: var(--transition);
-  }
-
-  nav ul.active {
-    right: 0;
-  }
-
-  .hamburger {
-    display: flex;
+  section {
+    padding: 70px 5%;
   }
 }
 
 @media (max-width: 600px) {
   .hero h1 {
     font-size: 2rem;
-  }
-
-  section {
-    padding: 70px 5%;
-  }
-
-  .service-card,
-  .portfolio-item {
-    padding: 1.5rem;
   }
 }

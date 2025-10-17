@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TechMark | Digital Marketing Agency</title>
   <meta name="description" content="A futuristic digital marketing website for tech products and campaigns. Responsive, animated, and minimalist." />
+  <meta name="keywords" content="Digital Marketing, Tech Marketing, SEO, Social Media, Tech Products, Portfolio, Blog">
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -14,7 +16,7 @@
   <header>
     <nav class="navbar">
       <div class="logo">TechMark</div>
-      <div class="menu-toggle" id="menu-toggle">☰</div>
+      <div class="menu-toggle" id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
       <ul class="nav-links" id="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -27,7 +29,7 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section id="home" class="hero">
+  <section id="home" class="hero" style="background: url('assets/images/hero-bg.jpg') center/cover no-repeat;">
     <div class="hero-content fade-in">
       <h1>Transforming Clicks into Customers</h1>
       <p>We craft data-driven digital strategies for tech brands that demand impact.</p>
@@ -44,17 +46,17 @@
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="section fade-in">
+  <section id="about" class="section fade-in" aria-label="About Us">
     <h2>About Us</h2>
     <p>TechMark is a forward-thinking agency helping tech companies dominate the digital space. Our mission: to turn innovation into influence through creative marketing execution.</p>
     <div class="team">
       <div class="member">
-        <img src="https://via.placeholder.com/150" alt="Jane Doe">
+        <img src="assets/images/team1.jpg" alt="Jane Doe">
         <h3>Jane Doe</h3>
         <p>Founder & Strategist</p>
       </div>
       <div class="member">
-        <img src="https://via.placeholder.com/150" alt="John Smith">
+        <img src="assets/images/team2.jpg" alt="John Smith">
         <h3>John Smith</h3>
         <p>Marketing Lead</p>
       </div>
@@ -62,19 +64,39 @@
   </section>
 
   <!-- SERVICES -->
-  <section id="services" class="section fade-in">
+  <section id="services" class="section fade-in" aria-label="Our Services">
     <h2>Our Services</h2>
     <div class="services-grid">
-      <div class="service"><div class="icon">📱</div><h3>Social Media Marketing</h3><p>We build digital presence that converts scrolls into sales.</p></div>
-      <div class="service"><div class="icon">🔍</div><h3>SEO Optimization</h3><p>Rank higher and be seen by the right customers.</p></div>
-      <div class="service"><div class="icon">💰</div><h3>Paid Ads</h3><p>Maximize ROI through precision-targeted ad campaigns.</p></div>
-      <div class="service"><div class="icon">📧</div><h3>Email Marketing</h3><p>Personalized campaigns that drive long-term loyalty.</p></div>
-      <div class="service"><div class="icon">🖊️</div><h3>Tech Content Creation</h3><p>Engaging articles, visuals, and videos for your audience.</p></div>
+      <div class="service">
+        <img src="assets/icons/social-media.svg" alt="Social Media Marketing Icon" class="icon-svg">
+        <h3>Social Media Marketing</h3>
+        <p>We build digital presence that converts scrolls into sales.</p>
+      </div>
+      <div class="service">
+        <img src="assets/icons/seo.svg" alt="SEO Icon" class="icon-svg">
+        <h3>SEO Optimization</h3>
+        <p>Rank higher and be seen by the right customers.</p>
+      </div>
+      <div class="service">
+        <img src="assets/icons/paid-ads.svg" alt="Paid Ads Icon" class="icon-svg">
+        <h3>Paid Ads</h3>
+        <p>Maximize ROI through precision-targeted ad campaigns.</p>
+      </div>
+      <div class="service">
+        <img src="assets/icons/email.svg" alt="Email Marketing Icon" class="icon-svg">
+        <h3>Email Marketing</h3>
+        <p>Personalized campaigns that drive long-term loyalty.</p>
+      </div>
+      <div class="service">
+        <img src="assets/icons/content-creation.svg" alt="Content Creation Icon" class="icon-svg">
+        <h3>Tech Content Creation</h3>
+        <p>Engaging articles, visuals, and videos for your audience.</p>
+      </div>
     </div>
   </section>
 
   <!-- PORTFOLIO -->
-  <section id="portfolio" class="section fade-in">
+  <section id="portfolio" class="section fade-in" aria-label="Portfolio">
     <h2>Portfolio</h2>
     <div class="filter-buttons">
       <button class="filter-btn active" data-category="all">All</button>
@@ -83,10 +105,22 @@
       <button class="filter-btn" data-category="accessories">Accessories</button>
     </div>
     <div class="portfolio-grid">
-      <div class="portfolio-item" data-category="phones"><img src="https://via.placeholder.com/300x200" alt="Phone"><h3>Galaxy Launch Ad</h3></div>
-      <div class="portfolio-item" data-category="pcs"><img src="https://via.placeholder.com/300x200" alt="PC"><h3>Gaming PC Campaign</h3></div>
-      <div class="portfolio-item" data-category="accessories"><img src="https://via.placeholder.com/300x200" alt="Accessory"><h3>Smartwatch Review</h3></div>
-      <div class="portfolio-item" data-category="phones"><img src="https://via.placeholder.com/300x200" alt="Phone"><h3>iPhone Teaser Series</h3></div>
+      <div class="portfolio-item" data-category="phones">
+        <img src="assets/images/product-phone1.jpg" alt="Galaxy Launch Ad">
+        <h3>Galaxy Launch Ad</h3>
+      </div>
+      <div class="portfolio-item" data-category="pcs">
+        <img src="assets/images/product-laptop1.jpg" alt="Gaming PC Campaign">
+        <h3>Gaming PC Campaign</h3>
+      </div>
+      <div class="portfolio-item" data-category="accessories">
+        <img src="assets/images/product-accessory1.jpg" alt="Smartwatch Review">
+        <h3>Smartwatch Review</h3>
+      </div>
+      <div class="portfolio-item" data-category="phones">
+        <img src="assets/images/product-phone2.jpg" alt="iPhone Teaser Series">
+        <h3>iPhone Teaser Series</h3>
+      </div>
     </div>
   </section>
 
@@ -95,26 +129,40 @@
     <h2>What Clients Say</h2>
     <div class="testimonial-container">
       <div class="testimonial active">
-        <p>“TechMark helped us grow our social media presence by 200%. Their strategies deliver results.”</p><h4>- AlphaTech CEO</h4>
+        <p>“TechMark helped us grow our social media presence by 200%. Their strategies deliver results.”</p>
+        <h4>- AlphaTech CEO</h4>
       </div>
       <div class="testimonial">
-        <p>“Professional, creative, and always on time. Our product launch exceeded all expectations.”</p><h4>- PC World Marketing Head</h4>
+        <p>“Professional, creative, and always on time. Our product launch exceeded all expectations.”</p>
+        <h4>- PC World Marketing Head</h4>
       </div>
     </div>
   </section>
 
   <!-- BLOG -->
-  <section id="blog" class="section fade-in">
+  <section id="blog" class="section fade-in" aria-label="Blog">
     <h2>Insights</h2>
     <div class="blog-grid">
-      <div class="blog-post"><h3>Top Smartphone Marketing Trends 2025</h3><p>Emerging trends that will reshape how brands market smartphones.</p></div>
-      <div class="blog-post"><h3>Why Performance Matters in Tech Ads</h3><p>Learn to optimize performance metrics for sustainable results.</p></div>
-      <div class="blog-post"><h3>Boost Engagement through Creativity</h3><p>Practical tips for building stronger online communities.</p></div>
+      <div class="blog-post">
+        <img src="assets/images/blog1.jpg" alt="Smartphone Marketing Trends">
+        <h3>Top Smartphone Marketing Trends 2025</h3>
+        <p>Emerging trends that will reshape how brands market smartphones.</p>
+      </div>
+      <div class="blog-post">
+        <img src="assets/images/blog2.jpg" alt="Performance in Tech Ads">
+        <h3>Why Performance Matters in Tech Ads</h3>
+        <p>Learn to optimize performance metrics for sustainable results.</p>
+      </div>
+      <div class="blog-post">
+        <img src="assets/images/blog3.jpg" alt="Boost Engagement">
+        <h3>Boost Engagement through Creativity</h3>
+        <p>Practical tips for building stronger online communities.</p>
+      </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="section fade-in">
+  <section id="contact" class="section fade-in" aria-label="Contact Us">
     <h2>Contact Us</h2>
     <form id="contact-form">
       <input type="text" placeholder="Name" required>
@@ -123,8 +171,12 @@
       <button type="submit" class="btn">Send Message</button>
     </form>
     <div class="contact-info">
-      <p>Email: info@techmark.com | Phone: +123 456 7890</p>
-      <p><a href="#">Facebook</a> | <a href="#">LinkedIn</a> | <a href="#">Instagram</a></p>
+      <p><i class="fa-solid fa-envelope"></i> Email: info@techmark.com | <i class="fa-solid fa-phone"></i> Phone: +123 456 7890</p>
+      <p>
+        <a href="#"><i class="fab fa-facebook"></i> Facebook</a> |
+        <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a> |
+        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+      </p>
     </div>
   </section>
 
@@ -147,6 +199,10 @@
       <input type="text" placeholder="Type a message..." />
     </div>
   </div>
+
+  <footer>
+    <p>&copy; 2025 TechMark. All Rights Reserved.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
